@@ -6,3 +6,6 @@ Justin was here too
 
 We used W3school's tutorials and documentation to resolve issues
 and implement some of the functionality of the site
+
+Tutorial to help with implementing hashes:
+http://www.mojavelinux.com/articles/javascript_hashes.html

@@ -65,16 +65,6 @@ function Course (p) {
 }
 
 function printCourse (c) {
-   if (c != null) {
-      var reqs = "";
-      console.log(c.properties
-                  + "<br>[NAME: " + c.name
-                  + "] -- [TITLE: " + c.title
-                  + "] -- [ID: " + c.id
-                  + "] -- [DEPARTMENT: " + c.department
-                  + "]<br>[PRE_REQUISITES: " + reqs
-                  + "] <br><br>");
-   }
 }
 
 function readfile (f1, f2, f3) {

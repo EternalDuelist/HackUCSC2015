@@ -12,6 +12,7 @@ function Quarter(id){
 		padding:10px;\
 		border:1px solid #aaaaaa;\
 		overflow-y: auto;\
+		background-color: white;\
 		display:inline-block;\
 		border-radius: 20px 0px 0px 20px;'
 	;
@@ -36,6 +37,7 @@ function quarterEnum(num){
 
 $(document).ready(function(){
   $("#update").click(function(){
+	//var swaggie = <? php echo $_GET["word"]; ?> ;
 	var divOne = new Quarter(quarterEnum(2) + 2012);
 	document.getElementById('schedule').innerHTML = divOne.html();
 	$("#schedule").show();

@@ -1,0 +1,1 @@
+$myWord = echo $_GET["word"];

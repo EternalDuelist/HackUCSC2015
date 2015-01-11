@@ -46,7 +46,7 @@ function insertClass(graph, schedule) {
 function dSort(graph, schedule) {
    for (var node in graph.prereq) {
       if (graph.prereq.hasOwnProperty(node)) {
-         var temp = dSort(graph.prereq[node], schedule)'
+         var temp = dSort(graph.prereq[node], schedule);
          if (temp > graph.quarter) {
             graph.quarter = temp;
          }

@@ -114,9 +114,11 @@ function readfile (f1, f2) {
 
       index = 0;
       d3.csv (f2, function (error, data) {
-         req_courses[index] = d.name;
-         reqs[index] = d.requisite;
-         index++;
+         data.forEach (function(d) {
+            req_courses[index] = d.name;
+            reqs[index] = d.requisite;
+            index++;
+         });
       }); // file reading complete
 
       var CMPS = new Graph('CMPS', 0);

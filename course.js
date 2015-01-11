@@ -107,8 +107,7 @@ function readfile (f1, f2) {
 
    d3.csv (f1, function (error, data) {
       data.forEach (function(d) {
-         all_courses[index] = new Course (d.courses);
-         all_courses[index].units = d.units;
+         all_courses[index] = new Course(d.courses);
          index++;
       });
 

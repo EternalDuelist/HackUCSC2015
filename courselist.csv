@@ -1,65 +1,66 @@
-courses, val
-CMPS5J: Introduction to Programming in Java, 0
-CMPS11: Intermediate Programming, 0
-CMPS12A: Introduction to Programming (Accelerated), 0
-CMPS12L: Computer Programming Laboratory, 0
-CMPS12B: Introduction to Data Structures, 0
-CMPS12M: Data Structures Laboratory, 0
-CMPS13H: Introduction to Programming and Data Structures (Honors), 0
-CMPS13L: Introduction to Programming and Data Structures Laboratory, 0
-CMPS101: Algorithms and Abstract Data Types, 0
-CMPS102: Introduction to Analysis of Algorithms, 0
-CMPS104A: Fundamentals of Compiler Design I, 0
-CMPS111: Introduction to Operating Systems, 0
-CMPS112: Comparative Programming Languages, 0
-CMPS115: Introduction to Software Engineering, 0
-CMPS116: Software Design Project, 0
-CMPS117: Software Design Project II, 0
-CMPS130: Computational Models, 0
-CMPS132: Computability and Computational Complexity, 0
-CMPS132W: Computability and Computational Complexity, 0
-CMPS180: Database Systems I, 0
-CMPS180W: Database Systems, 0
-CMPS185: Technical Writing and Communication in Computer Science, 0
-CMPE12: Computer Systems and Assembly Language, 0
-CMPE12L: Computer Systems and Assembly Language Laboratory, 0
-CMPE13: Computer Systems and C Programming, 0
-CMPE13L: Computer Systems and C Programming Laboratory, 0
-CMPE16: Applied Discrete Mathematics, 0
-CMPE110: Computer Architecture, 0
-CMPE107: Probability and Statistics for Engineers (formerly Math Systems: Stochastic), 0
-AMS2: Pre-Statistics, 0
-AMS3: Precalculus for Science and Engineers I, 0
-AMS6: Precalculus for Statistics, 0
-AMS10: Mathematical Methods for Engineers I, 0
-AMS131: Introduction to Probability Theory, 0
-ECON11A: Mathematical Methods For Economists I, 0
-ECON11B: Mathematical Methods for Economists II, 0
-MATH3: Precalculus, 0
-MATH11A: Calculus With Applications, 0
-MATH11B: Calculus With Applications, 0
-MATH19A: Calculus for Sci Engin  Math I, 0
-MATH19B: Calculus for Sci Engin Math II, 0
-MATH20A: Calculus for Sci Engin Math I (Honors), 0
-MATH20B: Calculus for Sci Engin Math I (Honors), 0
-MATH21: Linear Algebra, 0
-MATH22: Introduction To Calculus Of Several Variables, 0
-MATH23A: Vector Calculus, 0
-PHYS5A: Introduction To Physics I, 0
-PHYS5B: Introduction To Physics II, 0
-PHYS5C: Introduction To Physics III, 0
-PHYS5L: Introduction To Physics Laboratory, 0
-PHYS5M: Introduction To Physics Laboratory, 0
-PHYS5N: Introduction To Physics Laboratory, 0
-PHYS6A: Introductory Physics I, 0
-PHYS6B: Introductory Physics II, 0
-PHYS6C: Introductory Physics III, 0
-PHYS6L: Introductory Physics Laboratory, 0
-PHYS6M: Introductory Physics Laboratory, 0
-PHYS6N: Introductory Physics Laboratory, 0
-CHEM1A: General Chemistry, 0
-CHEM1B: General Chemistry, 0
-CHEM1C: General Chemistry, 0
-CHEM1L: General Chemistry Laboratory, 0
-CHEM1M: General Chemistry Laboratory, 0
-CHEM1N: General Chemistry Laboratory, 0
+courses,units
+CMPS5J: Introduction to Programming in Java,5
+CMPS11: Intermediate Programming,5
+CMPS12A: Introduction to Programming (Accelerated),5
+CMPS12L: Computer Programming Laboratory,0
+CMPS12B: Introduction to Data Structures,5
+CMPS12M: Data Structures Laboratory,2
+CMPS13H: Introduction to Programming and Data Structures (Honors),5
+CMPS13L: Introduction to Programming and Data Structures Laboratory,2
+CMPS101: Algorithms and Abstract Data Types,5
+CMPS102: Introduction to Analysis of Algorithms,5
+CMPS104A: Fundamentals of Compiler Design I,5
+CMPS111: Introduction to Operating Systems,5
+CMPS112: Comparative Programming Languages,5
+CMPS115: Introduction to Software Engineering,5
+CMPS116: Software Design Project,5
+CMPS117: Software Design Project II,5
+CMPS130: Computational Models,5
+CMPS132: Computability and Computational Complexity,5
+CMPS132W: Computability and Computational Complexity,0
+CMPS180: Database Systems I,5
+CMPS180W: Database Systems,0
+CMPS185: Technical Writing and Communication in Computer Science,5
+CMPE12: Computer Systems and Assembly Language,5
+CMPE12L: Computer Systems and Assembly Language Laboratory,2
+CMPE13: Computer Systems and C Programming,5
+CMPE13L: Computer Systems and C Programming Laboratory,2
+CMPE16: Applied Discrete Mathematics,5
+CMPE110: Computer Architecture,5
+CMPE107: Probability and Statistics for Engineers (formerly Math Systems: Stochastic),5
+AMS2: Pre-Statistics,5
+AMS3: Precalculus for Science and Engineering,5
+AMS6: Precalculus for Statistics,5
+AMS10: Mathematical Methods for Engineers I,5
+AMS131: Introduction to Probability Theory,5
+ECON11A: Mathematical Methods For Economists I,5
+ECON11B: Mathematical Methods For Economists II,5
+MATH2: College Algebra For Calculus,5
+MATH3: Precalculus,5
+MATH11A: Calculus With Applications,5
+MATH11B: Calculus With Applications,5
+MATH19A: Calculus for Sci,Engin,Math I,5
+MATH19B: Calculus for Sci,Engin,Math II,5
+MATH20A: Calculus for Sci,Engin,Math I (Honors),5
+MATH20B: Calculus for Sci,Engin,Math II (Honors),5
+MATH21: Linear Algebra,5
+MATH22: Introduction To Calculus Of Several Variables,5
+MATH23A: Vector Calculus,5
+PHYS5A: Introduction To Physics I,5
+PHYS5B: Introduction To Physics II,5
+PHYS5C: Introduction To Physics III,5
+PHYS5L: Introduction To Physics Laboratory,1
+PHYS5M: Introduction To Physics Laboratory,1
+PHYS5N: Introduction To Physics Laboratory,1
+PHYS6A: Introductory Physics I,5
+PHYS6B: Introductory Physics II,5
+PHYS6C: Introductory Physics III,5
+PHYS6L: Introduction To Physics Laboratory,1
+PHYS6M: Introduction To Physics Laboratory,1
+PHYS6N: Introduction To Physics Laboratory,1
+CHEM1A: General Chemistry,5
+CHEM1B: General Chemistry,5
+CHEM1C: General Chemistry,5
+CHEM1L: General Chemistry Laboratory,1
+CHEM1M: General Chemistry Laboratory,1
+CHEM1N: General Chemistry Laboratory,1

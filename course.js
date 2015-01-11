@@ -77,47 +77,28 @@ function printCourse (c) {
    }
 }
 
-function readfile (f1, f2, f3) {
-   var all_courses = [], major_courses = [], req_names = [], reqs = [];
+function readfile (f1, f2) {
+   var all_courses = [], major_courses = [], req_courses = [], reqs = [];
    var index = 0;
-   // read the file containing all the available courses
+
    d3.csv (f1, function (error, data) {
       data.forEach (function(d) {
          all_courses[index] = new Course (d.courses);
          index++;
       });
-      // read the file containing the courses for the major
+
       index = 0;
       d3.csv (f2, function (error, data) {
-         data.forEach (function(d) {
-            major_courses[index] = new Course (d.courses);
-            index++;
-         });
-         // read the file containing the pre-requisites for each course
-         index = 0;
-         d3.csv (f3, function (error, data) {
-            req_names[index] = d.name;
-            reqs[index] = d.requisite;
-            index++;
-         }); // file reading complete
-
-         // creates a collection of courses in the major for further operations
-         for (var i = 0; i < major_courses.length; i++) {
-            for (var j = 0; j < reqs.length; j++) {
-               if (reqname[j] == major_courses[i].name) {
-                  k = 0;
-                  major_courses[i].pre_reqs[k] = reqs[j];
-               }// end if
-            }// end for j
-         }// end for i
-
-      });// end d3.csv (f2)
+         req_courses[index] = d.name;
+         reqs[index] = d.requisite;
+         index++;
+      }); // file reading complete
    });// end d2.csv (f3)
 }
 
 // main function
 function main () {
-   readfile("courseslist.csv", "testcmpslist.csv", "testcmpsreqlist.csv");
+   readfile("courseslist.csv", "testcmpsreqlist.csv");
 }
 
 // call to main function

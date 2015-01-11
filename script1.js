@@ -38,20 +38,12 @@ function Quarter(id){
 	this.html = myhtml;
 	this.nestedTags  = "";
 	this.extra = 'ondrop="drop(event)" ondragover="allowDrop(event)"';
-	this.style = 'width:250px;\
-		height:175px;\
-		padding:10px;\
-		border:1px solid #aaaaaa;\
-		overflow-y: auto;\
-		background-color: white;\
-		display:inline-block;\
-		border-radius: 20px 0px 0px 20px;'
-	;
+	this.class = 'drgbox';
 }
 
 function myhtml(){
 	return  '<div id ="' + this.id + '" ' + this.extra +
-			'style ="' + this.style + '">'+this.id+'<hr><br>' + this.nestedTags + '</div>';
+			'class ="' + this.class + '">'+this.id+'<hr><br>' + this.nestedTags + '</div>';
 }
 
 function quarterEnum(num){
@@ -67,22 +59,15 @@ function quarterEnum(num){
 	}
 }
 
-function inputTest(element){
-	if(element.length > 0){
-		return true;
-	}
-	return false;
-}
-
 $(document).ready(function(){
 	$("#update").click(function(){
 		document.getElementById('schedule').innerHTML = '';
 		var hQuarts = new Object();
 		
-		var units     = ((inputTest(document.getElementById('unts'))) ? parseInt(document.getElementById('unts').value)  : 3);
-		var startYear = ((inputTest(document.getElementById('syear')))? parseInt(document.getElementById('syear').value) : 2015);
-		var numYear   = ((inputTest(document.getElementById('nyear')))? parseInt(document.getElementById('nyear').value) : 4);
-		var summer    = ((inputTest(document.getElementById('sumer')))? parseInt(document.getElementById('sumer').value) : 0);
+		var units     = parseInt(document.getElementById('unts').value);
+		var startYear = parseInt(document.getElementById('syear').value);
+		var numYear   = parseInt(document.getElementById('nyear').value);
+		var summer    = parseInt(document.getElementById('sumer').value);
 		
 		var clss = 1;
 		for (i = 0; i < numYear; i++){
@@ -90,12 +75,13 @@ $(document).ready(function(){
 				var year = startYear + i + ((j ==0)? 0 : 1);
 				var key = quarterEnum(j)+year;
 				hQuarts[key] = new Quarter(key);
+				hQuarts[key].nestedTags =  '<div class="drgable" id="clss'+ clss +'" draggable="true" ondragstart="drag(event)">\
+											<p style="margin:16px;">'+ clss +' <p></div>';
 				clss++;
-				hQuarts[key].nestedTags = '<img id="gClass'+ clss +'" src="images/genClass.bmp" draggable="true" ondragstart="drag(event)" width="200" height="50">';
 				document.getElementById('schedule').innerHTML += hQuarts[key].html();
 			}
 			document.getElementById('schedule').innerHTML += '<hr><br>';
-		}
+		}		
 		$("#schedule").show();
   });
 });

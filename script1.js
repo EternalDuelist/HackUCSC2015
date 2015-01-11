@@ -37,7 +37,8 @@ function Quarter(id){
 }
 
 function myhtml(){
-	return '<div id ="' + this.id + '" ' + this.extra + 'style ="' + this.style + '"></div>';
+	return  '<div id ="' + this.id + '" ' + this.extra +
+			'style ="' + this.style + '">'+this.id+'<hr><br></div>';
 }
 
 function quarterEnum(num){
@@ -54,10 +55,22 @@ function quarterEnum(num){
 }
 
 $(document).ready(function(){
-  $("#update").click(function(){
-	//var swaggie = <? php echo $_GET["word"]; ?> ;
-	var divOne = new Quarter(quarterEnum(2) + 2012);
-	document.getElementById('schedule').innerHTML = divOne.html();
-	$("#schedule").show();
+	$("#update").click(function(){
+		document.getElementById('schedule').innerHTML = '';
+		var hQuarts = new Object();
+		var units = 3;
+		var startYear = 2012;
+		var numYear = 4;
+		var summer = 1;
+		for (i = 0; i < numYear; i++){
+			for(j = 0; j < (3+summer); j++){
+				var year = startYear + i + ((j ==0)? 0 : 1);
+				var key = quarterEnum(j)+year;
+				hQuarts[key] = new Quarter(key);
+				document.getElementById('schedule').innerHTML += hQuarts[key].html();
+			}
+			document.getElementById('schedule').innerHTML += '<hr><br>';
+		}
+		$("#schedule").show();
   });
 });

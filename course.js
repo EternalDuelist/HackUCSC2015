@@ -69,7 +69,7 @@ function parseReqs (r, p) {
          }
          if (j >= p.length) token[i] = p.substring(k,j);
       }
-      for (var x = 0, x < token.length; x++) r[x] = token[x];
+      for (var x = 0; x < token.length; x++) r[x] = token[x];
    }
 }
 

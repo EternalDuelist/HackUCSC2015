@@ -1,6 +1,6 @@
-function Graph(name, value) {
+function Graph(name) {
    this.name = name;
-   this.value = value;
+   this.value = 0;
    this.quarter = 0;
    this.prereq = new Object();
 }

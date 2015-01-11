@@ -165,20 +165,19 @@ function readfile (f1, f2) {
 		 // end test major courses
 		 
 		 // start building automatic plan
-         var CMPS = new Graph('CMPS', 0);
-         var hData = new Object();
+         CMPS = new Graph('CMPS');
          var yearOne = [];
 		 console.log(CMPS.name + ' ' + CMPS.value + '<br>');
 		 
 		 // hash all required courses in the major into hData
          for (var i = 0; i < req_courses.length; i++) {
-            hashData (hData, req_courses[i], new Graph(req_courses[i], 0));
+            hashData (hData, req_courses[i], new Graph(req_courses[i]));
          }
 
          // sets and hashes pre-requisite for major courses
          var major = [];
          for (var i = 0; i < req_courses.length; i++) {
-            if (req_courses[i] == "CMPSBS") {
+            if (req_courses[i] == "CMPS") {
                parseReqs(major, reqs[i]);
                for (var j = 0; j < major.length; j++) {
                   hashData(CMPS.prereq, j.toString(), hData[major[j]]);

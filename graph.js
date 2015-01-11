@@ -25,13 +25,14 @@ function printHash(prefix,hash) {
 }
 
 function printGraph(graph) {
+console.log("\n");
    console.log('<br>' + graph.name + ' has prerequisites:<br>');
    printHash('> ', graph.prereq)
 }
 
 function printHashPR(hash) {
    for (var node in hash) {
-      if (hash.hasOwnPropert(node)) {
+      if (hash.hasOwnProperty(node)) {
          printGraph(hash[node]);
       }
    }
@@ -55,7 +56,7 @@ function dSort(graph, schedule) {
 
    if (graph.value == 0) {
       console.log(graph.name + " ");
-      inserClass(graph, schedule);
+      insertClass(graph, schedule);
       graph.value = 1;
       return graph.quarter + 1;
    }

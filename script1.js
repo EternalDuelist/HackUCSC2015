@@ -1,25 +1,3 @@
-/*This script is for drag and drop
-function schedule(){
-	
-}
-*/
-/*
-reference code
-
-$(document).ready(function(){
-  $("#update").click(function(){
-    $("#schedule").hide();
-	document.getElementById('schedule').innerHTML = "lol";
-	$("#schedule").show();
-  });
-});
-
-function update(){
-	document.getElementById('schedule').innerHTML = "swerve";
-	$("#schedule").show();
-}
-
-*/
 function allowDrop(event) {
     event.preventDefault();
 }

@@ -51,7 +51,26 @@ function parseDepartment (p) {
    }
 }
 
-function parseReqs (p) {
+function parseReqs (r, p) {
+   if (p != null) {
+      var token = [];
+      var index = 0, len = 1, j = 0, k = 0;
+      for (var i = 0; i < p.length; i++) if (p.charAt(i) == '&') len++;
+      
+      for (var i = 0; i < len; i++) {
+         while (j < p.length) {
+            if (p.charAt(j) == '&') {
+               token[i] = p.substring(k, j-1);
+               k = j+2;
+               j++;
+               break;
+            }
+            j++;
+         }
+         if (j >= p.length) token[i] = p.substring(k,j);
+      }
+      for (var x = 0, x < token.length; x++) r[x] = token[x];
+   }
 }
 
 function Course (p) {
@@ -61,12 +80,17 @@ function Course (p) {
    this.id = parseId(p).toString();
    this.department = parseDepartment(p).toString();
    this.pre_reqs = [];
-   this.units = 5;
+   this.units;
 }
 
+// printCourse function is for debugging purposes only
 function printCourse (c) {
    if (c != null) {
       var reqs = "";
+      for (var i = 0; i < c.pre_reqs.length; i++) {
+         if (i != c.pre_reqs.length) reqs += c.pre_reqs[i] + ", ";
+         else reqs += c.pre_reqs[i] + " ";
+      }
       console.log(c.properties
                   + "<br>[NAME: " + c.name
                   + "] -- [TITLE: " + c.title
@@ -78,12 +102,13 @@ function printCourse (c) {
 }
 
 function readfile (f1, f2) {
-   var all_courses = [], major_courses = [], req_courses = [], reqs = [];
+   var all_courses = [], req_courses = [], reqs = [];
    var index = 0;
 
    d3.csv (f1, function (error, data) {
       data.forEach (function(d) {
          all_courses[index] = new Course (d.courses);
+         all_courses[index].units = d.units;
          index++;
       });
 
@@ -93,6 +118,7 @@ function readfile (f1, f2) {
          reqs[index] = d.requisite;
          index++;
       }); // file reading complete
+
    });// end d2.csv (f3)
 }
 

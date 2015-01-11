@@ -119,7 +119,57 @@ function readfile (f1, f2) {
          index++;
       }); // file reading complete
 
-   });// end d2.csv (f3)
+      var CMPS = new Graph('CMPS', 0);
+      var hData = new Object();
+      var yearone = [];
+
+      for (var i = 0; i < req_courses.length; i++) {
+         hashData (hData, req_courses[i], new Graph (req_courses[i], 0));
+      }
+
+      // sets pre_requisite for upper major courses
+      var major = [];
+      for (var i = 0; i < req_courses.length; i++) {
+         if (req_courses[i] == "CMPSBS") {
+            parseReq(major, req[i]);
+            for (var j = 0; j < major.length; j++) {
+               hashData (CMPS.prereq, j.toString(), hData[major[j]]);
+            }
+         }
+         else break;
+      }
+      // sets pre_requisites for all courses in major
+      var requisite = [];
+      for (var i = 0; i < req_courses.length; i++) {
+         for (var j = 0; j < major.length; j++) {
+            if (req_courses[i] == major[j]) {
+               parseReq(requisite, reqs[i]);
+               for (var k = 0; k < requisite.length; k++) {
+                  hashData (hData[major[j]].prereq, k.toString(), hData[requisite[k]]);
+               }
+            }
+         }
+      }
+
+      yearOne[0] = new Quarter("Fall 2012", 3);
+      yearOne[1] = new Quarter("Winter 2013", 3);
+      yearOne[2] = new Quarter("Spring 2013", 3);
+
+      dSort(CMPS, yearOne);
+
+      document.write("<br>");
+      printHash("", hData);
+      printGraph(CMPS);
+      printHashPR(hData);
+      document.write("<br>");
+
+      for (var i = 0; i < 3; i++) {
+         document.write(yearOne[i].name + ":<br>");
+         for (var j = 0; j < yearOne[i].courseList[j].name + "<br>") {
+            document.write("> " + yearOne[i].courseList[j].name + "<br>");
+         }
+      }
+   });// end d2.csv (f1)
 }
 
 // main function

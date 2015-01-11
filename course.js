@@ -165,7 +165,7 @@ function readfile (f1, f2) {
 
       for (var i = 0; i < 3; i++) {
          document.write(yearOne[i].name + ":<br>");
-         for (var j = 0; j < yearOne[i].courseList[j].name + "<br>") {
+         for (var j = 0; j < yearOne[i].courseList[j].name + "<br>"; j++) {
             document.write("> " + yearOne[i].courseList[j].name + "<br>");
          }
       }

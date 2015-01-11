@@ -54,14 +54,22 @@ function quarterEnum(num){
 	}
 }
 
+function inputTest(element){
+	if(element.length > 0){
+		return true;
+	}
+	return false;
+}
+
 $(document).ready(function(){
 	$("#update").click(function(){
 		document.getElementById('schedule').innerHTML = '';
 		var hQuarts = new Object();
-		var units = 3;
-		var startYear = 2012;
-		var numYear = 4;
-		var summer = 1;
+		
+		var units     = ((inputTest(document.getElementById('unts'))) ? parseInt(document.getElementById('unts').value)  : 3);
+		var startYear = ((inputTest(document.getElementById('syear')))? parseInt(document.getElementById('syear').value) : 2015);
+		var numYear   = ((inputTest(document.getElementById('nyear')))? parseInt(document.getElementById('nyear').value) : 4);
+		var summer    = ((inputTest(document.getElementById('sumer')))? parseInt(document.getElementById('sumer').value) : 0);
 		for (i = 0; i < numYear; i++){
 			for(j = 0; j < (3+summer); j++){
 				var year = startYear + i + ((j ==0)? 0 : 1);

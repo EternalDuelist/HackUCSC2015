@@ -110,22 +110,6 @@ function printCourse (c) {
    }
 }
 
-// sets pre-requisites for graph objects
-function setter (name, course, pre_req, h) {
-	var requisite = [];
-	for (var i = 0; i < name.length; i++) {
-		for (var j = 0; j < course.length; j++) {
-			if (name[i] == course[j]) {
-				parseReqs(requisite, pre_req[i]);
-				for (var k = 0; k < requisite.length; k++) {
-					hashData(h[name[i]].prereq, k.toString(), h[requisite[k]]);
-				}
-				requisite = [];
-			}
-		}
-	}
-}
-
 function readfile (f1, f2) {
 	// all_courses contains all of the courses available
 	// req_courses contains the names for each required course in a major
@@ -149,6 +133,7 @@ function readfile (f1, f2) {
          }); // stop reading files
 		 
 		 // test major courses
+		 /*
 		 major_courses = [];
 		 temp = [];
 		 for (var i = 0; i < req_courses.length; i++) {
@@ -162,10 +147,10 @@ function readfile (f1, f2) {
 			}
 		 }
 		 for (var i = 0; i < major_courses.length; i++) printCourse(major_courses[i]);
+		 */
 		 // end test major courses
 		 
 		 // start building automatic plan
-         CMPS = new Graph('CMPS');
          var yearOne = [];
 		 console.log(CMPS.name + ' ' + CMPS.value + '<br>');
 		 
@@ -175,19 +160,18 @@ function readfile (f1, f2) {
          }
 
          // sets and hashes pre-requisite for major courses
-         var major = [];
-         for (var i = 0; i < req_courses.length; i++) {
-            if (req_courses[i] == "CMPS") {
-               parseReqs(major, reqs[i]);
-               for (var j = 0; j < major.length; j++) {
-                  hashData(CMPS.prereq, j.toString(), hData[major[j]]);
-               }
-            }
-            else break;
-         }
-		 
-         // sets and hashes pre-requisites for all other courses in major
-		 setter (req_courses, major, reqs, hData);
+         var pre = [];
+         parseReqs(pre, reqs[0]);
+          for (var i= 0; i < pre.length; i++) hashData(CMPS.prereq, i, hData[pre[i]]);
+		  
+		  pre = [];
+		  for (var i = 1; i < req_courses.length; i++) {
+			parseReqs(pre, reqs[i]);
+			for (var  j = 0; j < pre.length; j++) {
+				if (req_courses[i] == pre[j]) hashData(hData[req_courses[i]].prereq, j, hData[pre[j]]);
+			}
+			pre = [];
+		}
 		 
 		 // builds quarters using modified post sort algorithm
          yearOne[0] = new Quarter('Fall 2012', 3);

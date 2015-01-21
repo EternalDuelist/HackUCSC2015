@@ -1,7 +1,8 @@
 /* GLOBAL VARIABLES */
-var CMPS;
+var CMPS = new Graph('CMPS');
 var hData = new Object();
 /* END */
+
 function Graph(name) {
    this.name = name;
    this.value = 0;
